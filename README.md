@@ -1,32 +1,31 @@
-// Função para adicionar um amigo à lista
-    function adicionarAmigo() {
+// Aqui é a Função para adicionar um amigo à lista
+
+function adicionarAmigo() {
     const inputAmigo = document.getElementById('amigo');
     const nomeAmigo = inputAmigo.value.trim();
-
-    // Validação: Verifica se o campo está vazio
+    
+// Aqui Verifica se o campo está vazio
     if (nomeAmigo === '') {
         alert('Por favor, insira um nome válido.');
-        return;
-    }
-    // Obtém a lista de amigos
+        return;}
+        
+// Aqui Obtém a lista de amigos
     const listaAmigos = document.getElementById('listaAmigos');
-
-    // Verifica se o nome já existe na lista
+    
+// Aqui Verifica se o nome já existe na lista
     const itensLista = listaAmigos.getElementsByTagName('li');
     for (let item of itensLista) {
-        // Extrai o nome do item da lista (ignorando o botão "Remover")
+// Aqui Extrai o nome do item da lista (ignorando o botão "Remover")
         const nomeExistente = item.textContent.split('Remover')[0].trim();
         if (nomeExistente === nomeAmigo) {
             alert('Este nome já foi adicionado. Insira um nome diferente.');
-            return; // Interrompe a função se o nome já existir
-        }
+            return; // Interrompe a função se o nome já existir}
     }
-
-    // Cria um novo item da lista (<li>)
+// Aqui Cria um novo item da lista (<li>)
     const novoItem = document.createElement('li');
     novoItem.textContent = nomeAmigo;
 
-    // Cria um botão "Remover" para o item da lista
+// Aqui Cria um botão "Remover" para o item da lista
     const botaoRemover = document.createElement('button');
     botaoRemover.textContent = 'Remover';
     botaoRemover.classList.add('button-remove');
@@ -34,37 +33,37 @@
         listaAmigos.removeChild(novoItem); // Remove o item da lista
     };
 
-    // Adiciona o botão "Remover" ao item da lista
+// Aqui Adiciona o botão "Remover" ao item da lista
     novoItem.appendChild(botaoRemover);
 
-    // Adiciona o item à lista de amigos
+// Aqui Adiciona o item à lista de amigos
     listaAmigos.appendChild(novoItem);
 
-    // Limpa o campo de entrada
+// Aqui Limpa o campo de entrada
     inputAmigo.value = '';}
 
-     // Função para sortear um amigo secreto
+//Aqui é a Função para sortear um amigo secreto
     function sortearAmigo() {
     const listaAmigos = document.getElementById('listaAmigos').children;
     const resultado = document.getElementById('resultado');
 
-    // Verifica se há nomes na lista
+//Aqui  Verifica se há nomes na lista
     if (listaAmigos.length === 0) {
         alert('Adicione pelo menos um amigo para sortear.');
         return;
     }
 
-    //Parte do sorteio
+// aqui é a parte do sorteio
     resultado.innerHTML = 
     setTimeout(() => {
         // Sorteia um nome aleatório
         const indiceSorteado = Math.floor(Math.random() * listaAmigos.length);
         const amigoSorteado = listaAmigos[indiceSorteado].textContent;
 
-        // Extrai o nome do amigo
+// Aqui Extrai o nome do amigo
         const nomeAmigo = amigoSorteado.split('Remover')[0].trim();
 
-        // Exibe o resultado
+// Aqui Exibe o resultado
         resultado.innerHTML = `O amigo secreto é: <strong>${nomeAmigo}</strong></li>`;
     }, ); 
 }
