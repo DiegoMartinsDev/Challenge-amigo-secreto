@@ -1,4 +1,4 @@
-// Aqui é a Função para adicionar um amigo à lista
+// Aqui se inicia o códiog e é a Função para adicionar um amigo à lista
 
 function adicionarAmigo() {
     const inputAmigo = document.getElementById('amigo');
