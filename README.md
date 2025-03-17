@@ -1,3 +1,6 @@
+Link do deploy: https://diegomartinsdev.github.io/Challenge-amigo-secreto/
+
+
 // Aqui se inicia o código e é a Função para adicionar um amigo à lista
 
 function adicionarAmigo() {
